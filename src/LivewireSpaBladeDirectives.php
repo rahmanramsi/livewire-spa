@@ -17,6 +17,6 @@ class LivewireSpaBladeDirectives
     $versionedFileName = $manifest['/livewire-spa.js'];
     Str::startsWith($versionedFileName, '/') && $versionedFileName = substr($versionedFileName, 1);
 
-    return '<script src="' . route("livewire-spa.asset", $versionedFileName) . '"></script>';
+    return '<script src="' . route("livewire-spa.assets", $versionedFileName) . '"></script>';
   }
 }

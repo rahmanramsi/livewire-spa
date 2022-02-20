@@ -1,0 +1,15 @@
+<?php
+
+namespace {{ namespace }};
+
+use Rahmanramsi\LivewireSpa\Pages\Page;
+
+class {{ class }} extends Page
+{
+  protected static string $route = '{{ route }}';
+
+  public function render()
+  {
+    return view('{{ view }}');
+  }
+}

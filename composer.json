@@ -1,0 +1,31 @@
+{
+    "name": "rahmanramsi/livewire-spa",
+    "description": "SPA for Laravel Livewire",
+    "homepage": "https://github.com/rahmanramsi/livewire-spa",
+    "license": "MIT",
+    "require": {
+        "php": "^8.0",
+        "livewire/livewire": "^2.10",
+        "spatie/laravel-package-tools": "^1.9.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rahmanramsi\\LivewireSpa\\": "src"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rahmanramsi\\LivewireSpa\\LivewireSpaServiceProvider"
+            ],
+            "aliases": {
+                "LivewireSpa": "Rahmanramsi\\LivewireSpa\\Facades\\LivewireSpa"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

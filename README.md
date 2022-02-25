@@ -107,7 +107,7 @@ Now, the two created files will be in sub-folders:
 
 ## Navigate Between Page
 
-Just use default `a[href]` tag, it detect it. If you don't want LivewireSpa to prevent the default behavior, just add `native` attribute to `a` tag.
+Just use default `a[href]` tag, it will automatically detect it. If you don't want LivewireSpa to prevent the default behavior, just add `native` attribute to `a` tag.
 
 # Roadmap
 

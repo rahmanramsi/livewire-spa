@@ -105,11 +105,16 @@ Now, the two created files will be in sub-folders:
 
 `resources\views\livewire-spa\sub-folder\page-name.blade.php`
 
+## Navigate Between Page
+
+Just use default `a[href]` tag, it detect it. If you don't want LivewireSpa to prevent the default behavior, just add `native` attribute to `a` tag.
+
 # Roadmap
 
 - [ ] Write the test
 - [ ] Demo Page
 - [ ] Documentation Page
+- [ ] Starterpack
 
 # Contributing
 

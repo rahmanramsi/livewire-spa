@@ -1,15 +1,14 @@
 import nProgress from "nprogress";
 
 window.oldUrl = window.location.href;
-window.newUrl = "";
 window.addEventListener("popstate", (e) => {
-  window.newUrl = window.location.href;
-  if (!compareUrl(newUrl, oldUrl)) {
+  if (!compareUrl(window.location.href, oldUrl)) {
     Livewire.emitTo(
       "livewire-spa.core.single-page",
       "update-url",
       window.location.href
     );
+    window.oldUrl = window.location.href;
   }
 });
 
@@ -31,7 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (component.get("updateAddressBar")) {
       window.history.pushState({}, "", component.get("currentUrl"));
     }
-    Livewire.emit("livewire-spa-updated-page", window.location.href);
+    window.oldUrl = component.get("currentUrl");
+    Livewire.emit("livewire-spa-updated-page", component.get("currentUrl"));
   });
 });
 
@@ -64,6 +64,5 @@ function findLink(el) {
 }
 
 function compareUrl(url1, url2) {
-  console.log(url1.split("?")[0], url2.split("?")[0]);
   return url1.split("?")[0] === url2.split("?")[0];
 }

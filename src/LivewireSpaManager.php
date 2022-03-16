@@ -7,7 +7,6 @@ use Illuminate\Support\Str;
 class LivewireSpaManager
 {
     protected array $pages = [];
-    protected bool $isRouteMounted = false;
 
     public function getPages()
     {
@@ -24,7 +23,7 @@ class LivewireSpaManager
 
         $key = collect($this->getPages())
             ->search(fn ($page, $key) => Str::start($page::getRoute(), '/') === Str::start($uri, '/'));
-        
+
         return $key !== false ? $this->getPages()[$key] : null;
     }
 }

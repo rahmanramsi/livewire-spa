@@ -11,6 +11,10 @@ abstract class Page extends Component
 
     protected static ?string $slug = null;
 
+    protected static ?string $layout = null;
+
+    protected static array $middleware = [];
+
     public static function getRoute(): string
     {
         return static::$route;
@@ -36,5 +40,15 @@ abstract class Page extends Component
         return $slug->explode('\\')
             ->map(fn ($segment) => Str::kebab($segment))
             ->implode('.');
+    }
+
+    public static function getLayout(): string
+    {
+        return static::$layout ?? config('livewire-spa.layout', 'livewire-spa::layout.app');
+    }
+
+    public static function getMiddleware(): array
+    {
+        return static::$middleware;
     }
 }

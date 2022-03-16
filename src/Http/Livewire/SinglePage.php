@@ -31,10 +31,13 @@ class SinglePage extends Component
             $parameters = [];
             $livewireAlias = Livewire::getAlias(config('livewire-spa.pages.error', ErrorPage::class));
         }
-        return view('livewire-spa::single-page', [
+
+        $layout = $this->getPageClass()::getLayout();
+
+        return view($layout, [
             'parameters' => $parameters,
             'alias' => $livewireAlias,
-        ])->layout(config('livewire-spa.layout', 'livewire-spa::layout.app'));
+        ])->layout('livewire-spa::layout.blank');
     }
 
     protected function getRoute()

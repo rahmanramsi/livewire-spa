@@ -13,6 +13,7 @@ use Rahmanramsi\LivewireSpa\Http\Livewire\Pages\ErrorPage;
 class SinglePage extends Component
 {
     public $currentUrl;
+    public $updateAddressBar = false;
 
     protected $listeners = ['update-url' => 'setUrl'];
 
@@ -75,8 +76,9 @@ class SinglePage extends Component
         }
     }
 
-    public function setUrl($url)
+    public function setUrl($url, $updateAddressBar = false)
     {
         $this->currentUrl = $url;
+        $this->updateAddressBar = $updateAddressBar;
     }
 }
